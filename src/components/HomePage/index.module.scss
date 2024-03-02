@@ -1,3 +1,5 @@
+$small: 576px;
+
 .page-container {
     width: 100%;
     .title-container {
@@ -7,26 +9,63 @@
         justify-content: space-between;
         align-items: center;
         overflow:hidden;
+        flex-wrap: wrap;
+        @media screen and (max-width: $small) {
+            height: 852px;
+        }
+
         .title-wording-wrapper {
             height: 100%;
             padding-top: 150px;
             padding-left: 40px;
             max-width: 620px;
+            @media screen and (max-width: $small) {
+                width: 100%;
+                height: auto;
+                padding: 0;
+                margin: 0 20px;
+            }
             .title-wording {
+                @media screen and (max-width: $small) {
+                    text-align: center;
+                    margin-top: 30px;
+                }
                 font-family: 'Poppins';
                 h2 {
-                    font-size: 67px;
                     font-weight: bold;
+                    font-size: 67px;
                     line-height: 87.1px;
+                    @media screen and (max-width: $small) {
+                        font-size: 38px;
+                        line-height: 49px;
+                    }
                 }
                 p {
                     margin-top: 10px;
                     font-size: 21px;
+
+                    @media screen and (max-width: $small) {
+                        margin-top: 10px;
+                        font-size: 16px;
+                    }
                 }
             }
+        }
+        .title-wording-wrapper {
             .title-buttons {
                 margin-top: 40px;
+
+                @media screen and (max-width: $small) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 30px;
+                }
                 button + button {
+                    @media screen and (max-width: $small) {
+                        margin-top: 10px;
+                        margin-left: 0;
+                    }
                     margin-left: 15px;
                 }
                 button {
@@ -42,6 +81,11 @@
             display: flex;
             justify-content: center;
             position: relative;
+            @media screen and (max-width: $small) {
+                width: 100%;
+                padding: 0;
+                margin-top: 50px;
+            }
             .icon-background-1 {
                 position: absolute;
                 left: 0;
@@ -75,6 +119,11 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            @media screen and (max-width: $small) {
+                height: 1200px;
+                flex-direction: column-reverse;
+            }
+
             .feature-phone-wrapper {
                 height: 100%;
                 padding-left: 40px;
@@ -83,6 +132,12 @@
                 justify-content: center;
                 align-items: center;
                 position: relative;
+                @media screen and (max-width: $small) {
+                    height: 400px;
+                    width: 100%;
+                    padding: 0;
+                    margin-top: 30px;
+                }    
                 .icon-background-1 {
                     position: absolute;
                     right: 15%;
@@ -96,6 +151,11 @@
                     z-index: 2;
                 }
                 .white-background {
+                    @media screen and (max-width: $small) {
+                        width: 280px;
+                        height: 280px;
+                        left: 0;
+                    }
                     width: 378px;
                     height: 378px;
                     background: #F8D57E;
@@ -117,7 +177,15 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                @media screen and (max-width: $small) {
+                    height: 635px;
+                    padding: 0;
+                    margin-top: 30px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
                 .feature-wording {
+                    text-align:center;
                     h2 {
                         font-family: 'Poppins';
                         font-size: 38px;
@@ -127,7 +195,6 @@
                     p {
                         font-family: 'Mulish';
                         font-size: 21px;
-                        margin-top: 10px;
                     }
                 }
                 .feature-buttons {
@@ -135,10 +202,14 @@
                     justify-content: space-between;
                     align-items: center;
                     flex-wrap: wrap;
-                    margin-top: 20px;
+                    margin-top: 50px;
                     max-width: 620px;
                     row-gap: 20px;
                     column-gap: 20px;
+                    @media screen and (max-width: $small) {
+                        justify-content: center;
+                        column-gap: 0px;
+                    }
                 }
             }
         }
@@ -146,14 +217,23 @@
             width: 100%;
             height: 847px;
             background-color: #F8F9FF;
-            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            @media screen and (max-width: $small) {
+                height: 1665px;
+                padding: 0;
+            }
 
             .card-wording-wrapper {
-                text-align:center;
+                text-align: center;
+                @media screen and (max-width: $small) {
+                    margin-top: 30px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+
                 h2 {
                     font-family: 'Poppins';
                     font-size: 38px;
@@ -172,6 +252,14 @@
                 align-items: center;
                 margin-left: 40px;
                 margin-right: 40px;
+                margin-top: 60px;
+
+                @media screen and (max-width: $small) {
+                    flex-wrap: wrap;
+                    row-gap: 30px;
+                    margin-top: 30px;
+                    margin: 30px 20px;
+                }
             }
         }
         .comment-block-container {
@@ -183,9 +271,18 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            @media screen and (max-width: $small) {
+                height: 1471px;
+                padding: 0;
+            }
 
             .comment-wording-wrapper {
                 text-align:center;
+                @media screen and (max-width: $small) {
+                    margin-top: 30px;
+                margin-left: 20px;
+                margin-right: 20px;
+                }
                 h2 {
                     font-family: 'Poppins';
                     font-size: 38px;
@@ -199,19 +296,20 @@
                 }
             }
             .comment-card-wrapper {
-                margin-top: 30px;
+                margin-top: 60px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-left: 40px;
                 margin-right: 40px;
+                flex-wrap: wrap;
             }
         }
     }
 }
 
 // Phone
-.iphone-image-wrapper {
+.web-iphone-image-wrapper {
     position: absolute;
     width: 300px;
     height: 570px;
@@ -221,6 +319,20 @@
 
     border:solid 12px black;
     border-radius: 32px;
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 20%), 0px 8px 10px 0px rgb(0 0 0 / 5%);
+    z-index: 5;
+}
+
+.mobile-iphone-image-wrapper {
+    position: absolute;
+    width: 250px;
+    height: 450px;
+    background-image: url(./iphoneImg.png);
+    background-size: cover;
+    background-position: center;
+
+    border:solid 10px black;
+    border-radius: 20px;
     box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 20%), 0px 8px 10px 0px rgb(0 0 0 / 5%);
     z-index: 5;
 }
@@ -248,10 +360,13 @@
     }
     .feature-wording {
         width: 165px;
+        @media screen and (max-width: $small) {
+            width: auto;
+        }
         p {
             font-family: 'Mulish';
             font-size: 21px;
-            margin-top: 0;
+            margin-top: 0px;
         }
     }
 }
@@ -261,6 +376,10 @@
     padding: 10px;
     box-shadow: 0 0 15px #E5F4F2;
     .card-image {
+        @media screen and (max-width: $small) {
+            height: 278px;
+            width: 315px;
+        }
         height: 278px;
         width: 370px;
         object-fit: cover;
@@ -271,10 +390,15 @@
         font-size: 28px;
         font-weight: bold;
         line-height: 36px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     p {
         font-family: 'Mulish';
         font-size: 21px;
+        margin-top: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -284,15 +408,29 @@
     width: 480px;
     margin: 10px;
     // height: 200px;
+    @media screen and (max-width: $small) {
+        width:311px;
+    }
     .comment-wrapper {
         display: flex;
         justify-content: space-around;
         align-items: center;
         padding: 30px;
+        @media screen and (max-width: $small) {
+            flex-direction: column;
+            justify-content: center;
+        }
         .comment-profile {
+            @media screen and (max-width: $small) {
+                width:100%;
+                margin-right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             width: 500px;
             margin-right: 30px;
-            text-align:center;
+            text-align: center;
             h4 {
                 font-family: 'Poppins';
                 font-size: 21px;
@@ -309,11 +447,18 @@
                 border-radius: 50%;
             }
         }
-        .comment-stars {
-            display: flex;
-            justify-content:flex-start;
-            align-items: center;
-
+        .comment-content {
+            @media screen and (max-width: $small) {
+                flex-direction: column-reverse;
+            }
+            .comment-stars {
+                @media screen and (max-width: $small) {
+                    justify-content: center;
+                }
+                display: flex;
+                justify-content:flex-start;
+                align-items: center;
+            }
         }
     }
 }

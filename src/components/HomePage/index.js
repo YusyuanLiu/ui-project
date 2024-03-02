@@ -18,9 +18,13 @@ import cardImg from './cardImg.png';
 import man from './man.jpeg';
 import woman from './woman.jpeg';
 
-function Phone() {
-    return (
-        <div className={styles['iphone-image-wrapper']}>
+function Phone(props) {
+    return props.type === "web" ? (
+        <div className={styles['web-iphone-image-wrapper']}>
+            {/* <img src={iphone} /> */}
+        </div>
+    ) : (
+        <div className={styles['mobile-iphone-image-wrapper']}>
             {/* <img src={iphone} /> */}
         </div>
     );
@@ -73,7 +77,7 @@ function CommentCard(props) {
                     <h4 >{props.name}</h4> 
                     <p>{props.job}</p>
                 </Stack>
-                <Stack mt='6' spacing='3'>
+                <Stack mt='6' spacing='3' className={styles['comment-content']}>
                     <div className={styles['comment-stars']}>
                     {counters.map(() => (
                         <Icon as={FaStar} boxSize={7} color="yellow.300" />
@@ -162,7 +166,7 @@ function HomePage() {
                     <Icon className={styles['icon-background-1']} as={GiDiamonds} boxSize={10} color="white" />
                     <Icon className={styles['icon-background-2']} as={GiDiamonds} boxSize={10} color="red" />
                     <div className={styles['white-background']}></div>
-                    <Phone />
+                    <Phone className={styles['web-phone']} type="web"/>
                 </div>
             </div>
             <div className={styles['content-container']}>
@@ -171,7 +175,7 @@ function HomePage() {
                         <Icon className={styles['icon-background-1']} as={GiDiamonds} boxSize={10} color="white" />
                         <Icon className={styles['icon-background-2']} as={GiDiamonds} boxSize={20} color="red" />
                         <div className={styles['white-background']}></div>
-                        <Phone />
+                        <Phone className={styles['mobile-phone']} type="mobile"/>
                     </div>
                     <div className={styles['feature-wording-wrapper']}>
                         <div className={styles['feature-wording']}>
