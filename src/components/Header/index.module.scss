@@ -1,0 +1,36 @@
+.header-container {
+    width: 100%;
+    height: 100px;
+    background-color: #F8D57E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+
+    .header-title-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        .header-title {
+            .first-title{
+                font-family: 'Poppins';
+                font-size: 21px;
+                font-weight: bold;
+            }
+            .end-title {
+                font-family: 'Poppins';
+                font-size: 21px;
+            }
+        }
+    }
+
+    .header-buttons-wrapper {
+        button + button {
+            margin-left: 15px;
+        }
+        button {
+            border-radius: 20px;
+        }
+    }
+}
