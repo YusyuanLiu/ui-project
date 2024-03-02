@@ -17,6 +17,7 @@ import iphoneImg from './iphoneImg.png';
 import cardImg from './cardImg.png';
 import man from './man.jpeg';
 import woman from './woman.jpeg';
+import { getImages } from '../../apis/api';
 
 function Phone(props) {
     return props.type === "web" ? (
@@ -79,8 +80,8 @@ function CommentCard(props) {
                 </Stack>
                 <Stack mt='6' spacing='3' className={styles['comment-content']}>
                     <div className={styles['comment-stars']}>
-                    {counters.map(() => (
-                        <Icon as={FaStar} boxSize={7} color="yellow.300" />
+                    {counters.map((item, index) => (
+                        <Icon key={index} as={FaStar} boxSize={7} color="yellow.300" />
                     ))}
                     </div>
                     <p>{props.comment}</p>
@@ -113,19 +114,19 @@ function HomePage() {
     const cardList = [
         {
             img: cardImg,
-            title: "Project Title",
+            title: "Project Title1",
             subtitle: "Short Description",
             category: "Category",
         },
         {
             img: cardImg,
-            title: "Project Title",
+            title: "Project Title2",
             subtitle: "Short Description",
             category: "Category",
         },
         {
             img: cardImg,
-            title: "Project Title",
+            title: "Project Title3",
             subtitle: "Short Description",
             category: "Category",
         },
@@ -146,7 +147,13 @@ function HomePage() {
             stars: 5,
             comment: '“The Landing Page UI Kit has been a game changer. The pre-designed components and templates have helped us deliver projects faster!”'
         },
-    ]
+    ];
+
+    const [imgs, setImgs] = React.useState([]);
+    const handleGetImgs = async (limit) => {
+        const res = await getImages(limit);
+        setImgs(res);
+    };
 
     return (
         <div className={styles['page-container']}>
@@ -184,7 +191,7 @@ function HomePage() {
                         </div>
                         <div className={styles['feature-buttons']}>
                             {featureList.map((feature) => (
-                                <FeatureCard icon={feature.icon} wording={feature.wording} />
+                                <FeatureCard key={feature.icon} icon={feature.icon} wording={feature.wording} />
                             ))}
                         </div>
                     </div>
@@ -197,6 +204,7 @@ function HomePage() {
                     <div className={styles['card-wrapper']}>
                         {cardList.map((card) => (
                             <ImgCard
+                                key={card.title}
                                 img={card.img}
                                 title={card.title}
                                 subtitle={card.subtitle}
@@ -213,6 +221,7 @@ function HomePage() {
                     <div className={styles['comment-card-wrapper']}>
                         {commentList.map((comment) => (
                             <CommentCard
+                                key={comment.name}
                                 img={comment.img}
                                 name={comment.name}
                                 job={comment.job}
@@ -221,6 +230,22 @@ function HomePage() {
                             />
                         ))}
                     </div>
+                </div>
+            </div>
+            <div className={styles['footer-container']}>
+                <div className={styles['footer-title']}>
+                    <h2>Get Api Response</h2>
+                    <Button bg='#009379' color='#FFFFFF' height='50px' width='100px' onClick={() => handleGetImgs(1)}>Get One</Button>
+                    <Button bg='#009379' color='#FFFFFF' height='50px' width='100px' onClick={() => handleGetImgs(10)}>Get Multiple</Button>
+                </div>
+                <div className={styles['footer-images']}>
+                    {imgs.map((feature) => (
+                        <Image
+                            src={feature.url}
+                            borderRadius='lg'
+                            className={styles['image']}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
