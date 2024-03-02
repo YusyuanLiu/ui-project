@@ -1,0 +1,7 @@
+.DS_Store
+.thumbs.db
+node_modules
+
+# Log files
+yarn-debug.log*
+yarn-error.log*
