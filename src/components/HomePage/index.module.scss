@@ -229,7 +229,7 @@ $small: 576px;
             .card-wording-wrapper {
                 text-align: center;
                 @media screen and (max-width: $small) {
-                    margin-top: 30px;
+                    margin-top: 80px;
                     margin-left: 20px;
                     margin-right: 20px;
                 }
@@ -396,12 +396,13 @@ $small: 576px;
     .feature-wording {
         width: 165px;
         @media screen and (max-width: $small) {
-            width: auto;
+            width: 180px;
         }
         p {
             font-family: 'Mulish';
             font-size: 21px;
             margin-top: 0px;
+            text-align: start;
         }
     }
 }
