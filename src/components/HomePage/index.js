@@ -2,7 +2,7 @@ import React from "react";
 import Header from '../Header';
 import styles from './index.module.scss';
 import { Icon, Button } from '@chakra-ui/react';
-import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, SimpleGrid } from '@chakra-ui/react';
+import { Card, CardBody, Image, Stack } from '@chakra-ui/react';
 import { FaStar } from "react-icons/fa";
 import {
     PiRocketLaunchLight,
@@ -12,8 +12,6 @@ import {
     PiPackageDuotone,
 } from "react-icons/pi";
 import { GiDiamonds } from "react-icons/gi";
-import iphone from './iphone.png';
-import iphoneImg from './iphoneImg.png';
 import cardImg from './cardImg.png';
 import man from './man.jpeg';
 import woman from './woman.jpeg';
@@ -22,11 +20,9 @@ import { getImages } from '../../apis/api';
 function Phone(props) {
     return props.type === "web" ? (
         <div className={styles['web-iphone-image-wrapper']}>
-            {/* <img src={iphone} /> */}
         </div>
     ) : (
         <div className={styles['mobile-iphone-image-wrapper']}>
-            {/* <img src={iphone} /> */}
         </div>
     );
 }
